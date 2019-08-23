@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    EasyExam - Configurações
+{% endblock %}
+
+{% block extra_css %}
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+<div class="container">
+    <form id="new-term-form" class="single-form" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="user_name">Nome do Usuário</label>
+                    <input name="user_name" id="user_name" type="text" class="form-control" value="{{ profile.name }}" required>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input name="email" id="email" type="email" class="form-control" value="{{ profile.user.email }}" required>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="pass">Senha</label>
+                    <input name="pass" id="pass" type="password" class="form-control" value="{{ profile.user.password }}" required>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="crm">CRM</label>
+                    <input name="crm" id="crm" type="text" class="form-control" value="{{ profile.crm }}" disabled="disabled">
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="role">Atuação</label>
+                    <input name="role" id="role" type="text" class="form-control" value="" disabled="disabled">
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="custom-control custom-switch col-md-12">
+                    <input type="checkbox" class="custom-control-input" id="pswitch" data-on="On" data-off="Off">
+                    <label id="pslabel" class="custom-control-label" for="pswitch">Deseja receber as notificações de resultados por email?</label>
+                </div>
+            </div>
+
+             <div id="new-term-actions" class="col-md-4 flex-right">
+                <button id="emit-term-btn" name="emit-term" type="submit" class="btn btn-primary larger-btn">Salvar</button>
+            </div>
+        </div> 
+    </form>
+</div>
+
+{% endblock %}
+
+
+{% block extra_js %}
+
+{% endblock %}

@@ -1,0 +1,10 @@
+# Environment and secret settings
+.env
+
+# Settings symbolic link
+settings.py
+
+/static/
+/media/
+
+__pycache__
