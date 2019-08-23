@@ -18,6 +18,8 @@
     <form id="new-term-form" class="single-form" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
 
+        <input type="text" id="receive_email" name="receive_email" hidden value="{% if profile.receive_email %}1{% else %}0{% endif %}">
+
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
@@ -33,12 +35,6 @@
                 </div>
             </div>
 
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label for="pass">Senha</label>
-                    <input name="pass" id="pass" type="password" class="form-control" value="{{ profile.user.password }}" required>
-                </div>
-            </div>
 
             <div class="col-md-12">
                 <div class="form-group">
@@ -56,7 +52,7 @@
 
             <div class="col-md-8">
                 <div class="custom-control custom-switch col-md-12">
-                    <input type="checkbox" class="custom-control-input" id="pswitch" data-on="On" data-off="Off">
+                    <input type="checkbox" class="custom-control-input" id="pswitch" data-on="On" data-off="Off" {% if profile.receive_email %} checked="checked" {% endif %} >
                     <label id="pslabel" class="custom-control-label" for="pswitch">Deseja receber as notificações de resultados por email?</label>
                 </div>
             </div>
@@ -72,5 +68,5 @@
 
 
 {% block extra_js %}
-
+    <script src="{% static 'js/configuration.js' %}"></script>
 {% endblock %}

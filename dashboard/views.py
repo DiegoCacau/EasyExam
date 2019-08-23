@@ -67,18 +67,21 @@ class ConfigurationView(View):
                       {"profile": profile})
 
     def post(self, request):
-        messages.error(request, "Login ou usuário incorretos.")
 
         try:
             profile = Profile.objects.get(user=request.user)
 
+            receive_email = False
+            if(request.POST["receive_email"] == "1"):
+                receive_email = True
+
+
             profile.name = request.POST["user_name"]
             profile.user.email = request.POST["email"]
-            profile.receive_email = request.POST["pswitch"]
-
-            profile.user.set_password(request.POST["pass"])
+            profile.receive_email = receive_email
 
             profile.save()
+            print(receive_email)
 
             messages.success(request, "Configurações salvas com sucesso!")
 
