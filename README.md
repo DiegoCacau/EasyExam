@@ -33,4 +33,4 @@ $ python manage.py createsuperuser
 
 Than you can navigate to [http://localhost:8000/admin/](http://localhost:8000/admin/) to access Django admin site.
 
-You want to replace "myproject" with your project name and "myapp" with an app name.# EasyExam
+You want to replace "es_project" with your project name and "myapp" with an app name.# EasyExam

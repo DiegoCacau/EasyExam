@@ -73,11 +73,18 @@ class Sex(models.Model):
 class Patient(models.Model):
     name = models.CharField(max_length=100, null=True, default=None)
     email = models.CharField(max_length=100, null=True, default=None)
+    cpf = models.CharField(max_length=11, null=True, default=None)
     birthday = models.DateField(null=True, default=None)
     height = models.CharField(max_length=100, null=True, default=None)
     weight = models.CharField(max_length=100, null=True, default=None)
     sex = models.ForeignKey('Sex',
                             on_delete=models.CASCADE)
+
+    def __str__(self):
+        if(self.cpf):
+            return self.cpf + " - " + self.name
+
+        return "--- - " + self.name
 
 
 class Radiofarmaco(models.Model):

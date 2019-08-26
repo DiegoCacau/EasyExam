@@ -1,0 +1,1 @@
+[{"model": "dashboard.sex", "pk": 1, "fields": {"name": "Masculino", "slug": "masculino"}}, {"model": "dashboard.sex", "pk": 2, "fields": {"name": "Feminino", "slug": "feminino"}}]

@@ -4,6 +4,10 @@ from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
 from django.shortcuts import render, redirect
 from django.views import View
+from django.core.paginator import Paginator
+from django.shortcuts import render
+
+import datetime
 
 from .models import *
 
@@ -52,7 +56,10 @@ class IndexView(View):
         if(not request.user.is_authenticated):
             return HttpResponseRedirect(reverse("login"))
             
-        return render(request, 'index.html')
+        profile = Profile.objects.get(user=request.user)
+
+        return render(request, 'index.html',
+                      {"profile": profile})
 
 
 class ConfigurationView(View):
@@ -68,6 +75,9 @@ class ConfigurationView(View):
 
     def post(self, request):
 
+        if(not request.user.is_authenticated):
+            return HttpResponseRedirect(reverse("login"))
+
         try:
             profile = Profile.objects.get(user=request.user)
 
@@ -81,7 +91,6 @@ class ConfigurationView(View):
             profile.receive_email = receive_email
 
             profile.save()
-            print(receive_email)
 
             messages.success(request, "Configurações salvas com sucesso!")
 
@@ -89,4 +98,88 @@ class ConfigurationView(View):
             messages.error(request, str(e))
 
         return render(request, 'configurations.html',
+                      {"profile": profile})
+
+
+class NewPatientView(View):
+
+    def get(self, request):
+        if(not request.user.is_authenticated):
+            return HttpResponseRedirect(reverse("login"))
+
+        profile = Profile.objects.get(user=request.user)
+            
+        return render(request, 'new_patient.html',
+                      {"profile": profile})
+
+
+    def post(self, request):
+
+        if(not request.user.is_authenticated):
+            return HttpResponseRedirect(reverse("login"))
+
+        profile = Profile.objects.get(user=request.user)
+
+        cpf = request.POST["user_cpf"].replace(".","").replace("-","")
+
+        try:
+            patient = Patient.objects.get(cpf=cpf)
+            messages.error(request, "CPF já cadastrado.")
+        except Exception as e:
+            try:
+
+                sex = Sex.objects.get(slug=request.POST["user_sex"])
+
+                patient = Patient()
+                patient.cpf = cpf
+                patient.name = request.POST["user_name"]
+                patient.email = request.POST["user_email"]
+                patient.birthday = datetime.datetime.strptime(request.POST["user_birthday"],
+                                                              "%d/%m/%Y").strftime("%Y-%m-%d")
+                patient.weight = request.POST["user_weight"]
+                patient.height = request.POST["user_height"]
+                patient.sex = sex
+                patient.save()
+
+                messages.success(request, "Paciente cadastrado com sucesso!")
+            
+            except Sex.DoesNotExist as e:
+                messages.error(request, "Sexo inválido!")
+            
+            except Exception as e:
+                messages.error(request, str(e))
+
+        return render(request, 'new_patient.html',
+                      {"profile": profile})
+
+
+class ListPatientView(View):
+
+    def get(self, request):
+        if(not request.user.is_authenticated):
+            return HttpResponseRedirect(reverse("login"))
+
+        profile = Profile.objects.get(user=request.user)
+
+        patients = Patient.objects.all()
+        paginator = Paginator(patients, 25)
+
+        page = request.GET.get('page')
+        patients = paginator.get_page(page)
+            
+        return render(request, 'list_patient.html',
+                      {"patients": patients,
+                       "profile": profile})
+
+
+class NewExamView(View):
+
+    def get(self, request):
+        if(not request.user.is_authenticated):
+            return HttpResponseRedirect(reverse("login"))
+
+        profile = Profile.objects.get(user=request.user)
+
+            
+        return render(request, 'new_exam.html',
                       {"profile": profile})

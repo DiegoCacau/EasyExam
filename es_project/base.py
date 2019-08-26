@@ -16,8 +16,8 @@ ALLOWED_HOSTS = [
 ]
 
 # Application definition
-ROOT_URLCONF = 'myproject.urls'
-WSGI_APPLICATION = 'myproject.wsgi.application'
+ROOT_URLCONF = 'es_project.urls'
+WSGI_APPLICATION = 'es_project.wsgi.application'
 
 INSTALLED_APPS = [
     'django.contrib.admin',

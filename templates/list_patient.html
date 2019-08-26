@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    EasyExam - Pacientes
+{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css"/>
+{% endblock %}
+
+
+
+
+{% block content %}
+
+<div class="container">
+
+    <div class="col-12 mb-4">
+        <h2>Pacientes</h2>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-8">
+            <input class="form-control" type="text" name="search_value">
+        </div>
+        <div class="col-2">
+            <button>Procurar</button>
+        </div>
+        <div class="col-2">
+            <a href="{% url 'new_patient' %}" class="btn btn-primary">Novo</a>
+        </div>
+    </div>
+
+
+    <table id="asset-table" class="display table table-striped text-left" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Data de Nascimento</th>
+                <th>Peso</th>
+                <th>Altura</th>
+                <th>Histórico</th>
+            </tr>
+        </thead>
+        <tbody>
+
+
+            {% for patient in patients %}
+                <tr>
+                    <td><span>{{ patient.name }}</span></td>
+                    <td><span>{{ patient.email }}</span></td>
+                    <td><span>{{ patient.birthday }}</span></td>
+                    <td><span>{{ patient.weight }}</span></td>
+                    <td><span>{{ patient.height }}</span></td>
+                    <td><button class="btn btn-primary">Ver</button></td>
+                </tr>
+            {% endfor %}
+
+            
+
+        </tbody>
+        <tfoot>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tfoot>
+    </table>
+</div>
+
+{% endblock %}
+
+
+{% block extra_js %}
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
+{% endblock %}

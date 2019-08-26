@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    EasyExam - Novo Paciente
+{% endblock %}
+
+{% block extra_css %}
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+<div class="container">
+    <div class="col-12 mb-4">
+        <h2>Novo Paciente</h2>
+    </div>
+
+
+    <form id="new-term-form" class="single-form" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="user_name">Nome</label>
+                    <input name="user_name" id="user_name" type="text" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="user_cpf">CPF</label>
+                    <input name="user_cpf" id="user_cpf" type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="user_email">Email</label>
+                    <input name="user_email" id="user_email" type="email" class="form-control" required>
+                </div>
+            </div>
+
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="user_birthday">Data de Nascimento</label>
+                    <input name="user_birthday" id="user_birthday" type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="user_weight">Peso</label>
+                    <input name="user_weight" id="user_weight" type="text" class="form-control" value="">
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="user_height">Altura</label>
+                    <input name="user_height" id="user_height" type="text" class="form-control" value="">
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="user_sex">Altura</label>
+                    <select name="user_sex" id="user_sex" autocomplete="off" class="form-control custom-select">
+                        <option value="0" selected="selected">Escolha...</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
+                    </select>                    
+                </div>
+            </div>
+
+
+            <div id="new-term-actions" class="col-md-4 flex-right">
+                <button id="emit-term-btn" name="emit-term" type="submit" class="btn btn-primary larger-btn">Salvar</button>
+            </div>
+        </div> 
+    </form>
+</div>
+
+{% endblock %}
+
+
+{% block extra_js %}
+
+{% endblock %}
