@@ -172,9 +172,44 @@ class ListPatientView(View):
                        "profile": profile})
 
 
+class PatientView(View):
+
+    def get(self, request, pk=None):
+        if(not request.user.is_authenticated):
+            return HttpResponseRedirect(reverse("login"))
+
+        profile = Profile.objects.get(user=request.user)
+
+        if(not pk):
+            messages.error(request, "Paciente inexistente.")
+            return HttpResponseRedirect(reverse("index"))
+
+        patient = Patient.objects.get(pk=pk)
+        exams = Exam.objects.filter(patient=patient)
+
+            
+        return render(request, 'patient.html',
+                      {"profile": profile,
+                       "patient": patient,
+                       "exams": exams})
+
+
 class NewExamView(View):
 
     def get(self, request):
+        if(not request.user.is_authenticated):
+            return HttpResponseRedirect(reverse("login"))
+
+        profile = Profile.objects.get(user=request.user)
+
+            
+        return render(request, 'new_exam.html',
+                      {"profile": profile})
+
+
+class NewExamUserView(View):
+
+    def get(self, request, pk=None):
         if(not request.user.is_authenticated):
             return HttpResponseRedirect(reverse("login"))
 

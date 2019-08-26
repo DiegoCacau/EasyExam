@@ -8,5 +8,7 @@ urlpatterns = [
     re_path(r'^configuracao/$', ConfigurationView.as_view(), name='configuration'),
     re_path(r'^paciente/cadastro$', NewPatientView.as_view(), name='new_patient'),
     re_path(r'^paciente/lista$', ListPatientView.as_view(), name='list_patient'),
+    re_path(r'^paciente/ver/(?P<pk>[0-9]+)$', PatientView.as_view(), name='patient'),
     re_path(r'^exame/cadastro$', NewExamView.as_view(), name='new_exam'),
+    re_path(r'^exame/cadastro/(?P<pk>[0-9]+)$', NewExamUserView.as_view(), name='new_exam_pk'),
 ]

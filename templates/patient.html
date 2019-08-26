@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    EasyExam - Pacientes
+    EasyExam - Paciente
 {% endblock %}
 
 {% block extra_css %}
@@ -17,7 +17,8 @@
 <div class="container">
 
     <div class="col-12 mb-4">
-        <h2>Pacientes</h2>
+        <h2>Exames do paciente - {{patient.name}}</h2>
+        <h4>CPF: {{patient.cpf}}</h4>
     </div>
 
     <div class="row mb-4">
@@ -28,7 +29,7 @@
             <button>Procurar</button>
         </div>
         <div class="col-2">
-            <a href="{% url 'new_patient' %}" class="btn btn-primary">Novo</a>
+            <a href="{% url 'new_exam_pk' pk=patient.pk %}" class="btn btn-primary">Novo</a>
         </div>
     </div>
 
@@ -36,25 +37,23 @@
     <table id="asset-table" class="display table table-striped text-left" cellspacing="0" width="100%">
         <thead>
             <tr>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Data de Nascimento</th>
-                <th>Peso</th>
-                <th>Altura</th>
-                <th>Histórico</th>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Data</th>
+                <th>Ver</th>
+                <th>Ação</th>
             </tr>
         </thead>
         <tbody>
 
 
-            {% for patient in patients %}
+            {% for exam in exams %}
                 <tr>
-                    <td><span>{{ patient.name }}</span></td>
-                    <td><span>{{ patient.email }}</span></td>
-                    <td><span>{{ patient.birthday }}</span></td>
-                    <td><span>{{ patient.weight }}</span></td>
-                    <td><span>{{ patient.height }}</span></td>
-                    <td><a href="{% url 'patient' pk=patient.pk %}"><button class="btn btn-primary">Ver</button></a></td>
+                    <td><span>{{ exam.pk }}</span></td>
+                    <td><span>{{ exam.status }}</span></td>
+                    <td><span>{{ exam.date }}</span></td>
+                    <td><span> </span></td>
+                    <td><span> </span></td>
                 </tr>
             {% endfor %}
 
@@ -62,7 +61,6 @@
 
         </tbody>
         <tfoot>
-            <th></th>
             <th></th>
             <th></th>
             <th></th>
