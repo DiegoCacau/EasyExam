@@ -1,0 +1,1 @@
+[{"model": "dashboard.level", "pk": 1, "fields": {"name": "Fatores de r\u00edsco", "slug": "fator_risco"}}, {"model": "dashboard.level", "pk": 2, "fields": {"name": "DAC pr\u00e9via", "slug": "dac_prev"}}, {"model": "dashboard.level", "pk": 3, "fields": {"name": "Comorbidades", "slug": "comorbidades"}}]
