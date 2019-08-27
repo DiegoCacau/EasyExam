@@ -201,10 +201,26 @@ class NewExamView(View):
             return HttpResponseRedirect(reverse("login"))
 
         profile = Profile.objects.get(user=request.user)
+        motivations = Motivation.objects.all()
+        hdas = Hda.objects.all()
+
+        level = Level.objects.get(slug="fator_risco")
+        risks = Hpp.objects.filter(level=level)
+
+        level2 = Level.objects.get(slug="dac_prev")
+        dcas = Hpp.objects.filter(level=level2)
+
+        level3 = Level.objects.get(slug="comorbidades")
+        comorbidades = Hpp.objects.filter(level=level3)
 
             
         return render(request, 'new_exam.html',
-                      {"profile": profile})
+                      {"profile": profile,
+                       "motivations": motivations,
+                       "hdas": hdas,
+                       "risks": risks,
+                       "dcas": dcas,
+                       "comorbidades": comorbidades})
 
 
 class NewExamUserView(View):
@@ -214,7 +230,11 @@ class NewExamUserView(View):
             return HttpResponseRedirect(reverse("login"))
 
         profile = Profile.objects.get(user=request.user)
+        motivations = Motivation.objects.all()
+
+        print(motivations)
 
             
         return render(request, 'new_exam.html',
-                      {"profile": profile})
+                      {"profile": profile,
+                       "motivations": motivations})

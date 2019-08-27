@@ -24,62 +24,171 @@
     <form id="new-term-form" class="single-form" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
 
+        <div class="row">
+            <div class="col-6">
+
+                <h3>Motivos do Exame</h3>
+
+                {% for motivation in motivations %}
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="{{ motivation.slug }}" name="motivations[]">
+                      <label class="form-check-label" for="motivations[]">
+                        {{ motivation.name }}
+                      </label>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="col-6">
+
+                <h3>HDA</h3>
+
+                {% for hda in hdas %}
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="{{ hda.slug }}" name="hdas[]">
+                      <label class="form-check-label" for="hdas[]">
+                        {{ hda.name }}
+                      </label>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="row  text-center">
+            <div class="col-12 text-center">
+                <h3>HPP</h3>
+            </div>
+            
+            <div class="row" style="margin-top: 30px; width: 100%">
+                <div class="col-12 text-left">
+                    <h5>Fatores de Risco</h3>
+                </div>
+                {% for risk in risks %}
+                    <div class="form-check" style="margin: 8px;">
+                      <input class="form-check-input" type="checkbox" value="{{ risk.slug }}" name="risks[]">
+                      <label class="form-check-label" for="risks[]">
+                        {{ risk.name }}
+                      </label>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="row" style="margin-top: 30px; width: 50%">
+                <div class="col-12 text-left">
+                    <h5>DAC Prévia</h3>
+                </div>
+                {% for dca in dcas %}
+                    <div class="form-check" style="margin: 8px;">
+                      <input class="form-check-input" type="checkbox" value="{{ dca.slug }}" name="dcas[]">
+                      <label class="form-check-label" for="dcas[]">
+                        {{ dca.name }}
+                      </label>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="row" style="margin-top: 30px; width: 50%">
+                <div class="col-12 text-left">
+                    <h5>Comorbidades</h3>
+                </div>
+                {% for comorbidade in comorbidades %}
+                    <div class="form-check" style="margin: 8px;">
+                      <input class="form-check-input" type="checkbox" value="{{ comorbidade.slug }}" name="comorbidades[]">
+                      <label class="form-check-label" for="comorbidades[]">
+                        {{ comorbidade.name }}
+                      </label>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-12 text-center">
+                <h3>Medicamentos</h3>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="bloq_cal">Bloq Cálcio</label>
+                    <input name="bloq_cal" id="bloq_cal" type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="clopido">Clópido Rel</label>
+                    <input name="clopido" id="clopido" type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="calcio">Cálcio</label>
+                    <input name="calcio" id="calcio" type="text" class="form-control">
+                </div>
+            </div>
+
+             <div class="col-6">
+                <div class="form-group">
+                    <label for="aas">AAS</label>
+                    <input name="aas" id="aas" type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="estamina">Estamina</label>
+                    <input name="estamina" id="estamina" type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="bloqueador">B Bloqueador</label>
+                    <input name="bloqueador" id="bloqueador" type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="bra">Bra</label>
+                    <input name="bra" id="bra" type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="diuretico">Diurético</label>
+                    <input name="diuretico" id="diuretico" type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="ieca">IECA</label>
+                    <input name="ieca" id="ieca" type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="others">Outros</label>
+                    <input name="others" id="others" type="text" class="form-control">
+                </div>
+            </div>
+            
+        </div>
+
+         <div class="row" style="margin-top: 30px;">
+            <div class="col-12 text-center">
+                <h3>Estresse</h3>
+            </div>
+        </div>
+        
+
 
         <!-- <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label for="user_name">Nome</label>
-                    <input name="user_name" id="user_name" type="text" class="form-control" required>
-                </div>
-            </div>
-
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label for="user_cpf">CPF</label>
-                    <input name="user_cpf" id="user_cpf" type="text" class="form-control">
-                </div>
-            </div>
-
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label for="user_email">Email</label>
-                    <input name="user_email" id="user_email" type="email" class="form-control" required>
-                </div>
-            </div>
-
-
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label for="user_birthday">Data de Nascimento</label>
-                    <input name="user_birthday" id="user_birthday" type="text" class="form-control">
-                </div>
-            </div>
-
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label for="user_weight">Peso</label>
-                    <input name="user_weight" id="user_weight" type="text" class="form-control" value="">
-                </div>
-            </div>
-
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label for="user_height">Altura</label>
-                    <input name="user_height" id="user_height" type="text" class="form-control" value="">
-                </div>
-            </div>
-
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label for="user_sex">Altura</label>
-                    <select name="user_sex" id="user_sex" autocomplete="off" class="form-control custom-select">
-                        <option value="0" selected="selected">Escolha...</option>
-                        <option value="masculino">Masculino</option>
-                        <option value="feminino">Feminino</option>
-                    </select>                    
-                </div>
-            </div>
-
+            
 
             <div id="new-term-actions" class="col-md-4 flex-right">
                 <button id="emit-term-btn" name="emit-term" type="submit" class="btn btn-primary larger-btn">Salvar</button>

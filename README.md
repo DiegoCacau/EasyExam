@@ -45,8 +45,14 @@
 	```
 
 
+* After create your super user:
+Go to http://127.0.0.1:8000/admin, access with your credentials, go to Profiles and create a profile linked to your admin account
+
+
 * To run tests:
 
 	```
 	$ python manage.py  test --verbosity=2 -k
 	```
+
+
