@@ -1,0 +1,222 @@
+.top-menu {
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+height: 160px;
+z-index: 2;
+/* Primary — 300 */
+
+background: #9E54FC;
+}
+
+.user-name{
+position: absolute;
+height: 29px;
+left: 16px;
+right: 1296px;
+top: -2px;
+
+/* H5 / Roboto Regular */
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+/* identical to box height */
+
+
+/* White — High Emphasis */
+
+color: #FFFFFF;
+mix-blend-mode: normal;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.date{
+	position: absolute;
+height: 16px;
+left: 16px;
+right: 140px;
+top: 32.8px;
+
+/* Caption / Roboto Regular */
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height, or 133% */
+
+letter-spacing: 0.4px;
+
+/* White — Medium Emphasis */
+
+color: rgba(255, 255, 255, 0.7);
+mix-blend-mode: normal;
+}
+
+.side-menu{
+position: absolute;
+width: 304px;
+left: 0px;
+top: 0px;
+bottom: 0px;
+
+/* Surface — Drawers */
+
+background: #FFFFFF;
+/* 16dp — Elevation */
+
+box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2), 0px 6px 30px rgba(0, 0, 0, 0.12), 0px 16px 24px rgba(0, 0, 0, 0.14);
+}
+
+.gestor{
+position: absolute;
+left: 16px;
+right: 16px;
+top: 183px;
+bottom: 17.14%;
+
+/* H6 / Roboto Medium */
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 23px;
+letter-spacing: 0.15px;
+
+/* Black — High Emphasis */
+
+color: rgba(0, 0, 0, 0.87);
+mix-blend-mode: normal;
+}
+
+.role{
+	position: absolute;
+width: 196px;
+height: 38px;
+left: 16px;
+top: 223px;
+
+/* Caption / Roboto Regular */
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 16px;
+/* or 133% */
+
+letter-spacing: 0.4px;
+
+color: #000000;
+
+}
+
+.border{
+	border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+	position: absolute;
+	left: 0;
+	width: 304px;
+	top: 283px;
+}
+
+.home{
+	position: absolute;
+left: 0%;
+right: 0%;
+top: 283px;
+
+
+	
+}
+
+.pacientes{
+position: absolute;
+left: 0%;
+right: 0%;
+top: 313px;
+
+
+border-radius: 4px;
+}
+
+.exames{
+	position: absolute;
+left: 0%;
+right: 0%;
+top: 343px;
+
+
+border-radius: 4px;
+}
+
+.r-exames{
+	position: absolute;
+left: 0%;
+right: 0%;
+top: 373px;
+
+
+border-radius: 4px;
+}
+
+.resultados{
+	position: absolute;
+left: 0%;
+right: 0%;
+top: 403px;
+
+
+border-radius: 4px;
+}
+
+.analises{
+	position: absolute;
+left: 0%;
+right: 0%;
+top: 433px;
+
+
+border-radius: 4px;
+}
+
+.menu-font{
+	position: relative;
+height: 20px;
+left: 42px;
+right: 56px;
+top: calc(50% - 20px/2 + 1.92px);
+
+/* Body 2 / Roboto Regular */
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 20px;
+/* identical to box height, or 143% */
+
+letter-spacing: 0.25px;
+
+/* Black — High Emphasis */
+
+color: rgba(0, 0, 0, 0.87);
+mix-blend-mode: normal;
+
+}
+
+.icon{
+	position: absolute;
+left: 8.33%;
+right: 8.33%;
+top: 14.58%;
+bottom: 14.58%;
+
+background: #DADADA;
+}
