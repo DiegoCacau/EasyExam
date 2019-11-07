@@ -60,6 +60,7 @@ mix-blend-mode: normal;
 }
 
 .side-menu{
+overflow-y:scroll;
 position: fixed;
 width: 304px;
 left: 0px;
