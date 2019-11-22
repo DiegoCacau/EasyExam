@@ -128,7 +128,7 @@ color: #000000;
 }
 
 .home{
-	position: absolute;
+position: absolute;
 left: 0%;
 right: 0%;
 top: 283px;
@@ -690,6 +690,7 @@ letter-spacing: 0.01em;
 position: relative;
 left: 0px;
 top: 300px;
+z-index: -10000;
 
 /* white */
 
