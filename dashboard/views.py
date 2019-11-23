@@ -70,7 +70,7 @@ class ConfigurationView(View):
 
         profile = Profile.objects.get(user=request.user)
             
-        return render(request, 'configurations.html',
+        return render(request, 'index.html',
                       {"profile": profile})
 
     def post(self, request):
@@ -214,7 +214,7 @@ class NewExamView(View):
         comorbidades = Hpp.objects.filter(level=level3)
 
             
-        return render(request, 'new_exam.html',
+        return render(request, 'index.html',
                       {"profile": profile,
                        "motivations": motivations,
                        "hdas": hdas,
@@ -235,7 +235,7 @@ class NewExamUserView(View):
         print(motivations)
 
             
-        return render(request, 'new_exam.html',
+        return render(request, 'index.html',
                       {"profile": profile,
                        "motivations": motivations})
 
