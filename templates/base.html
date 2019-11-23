@@ -1,68 +1,51 @@
 {% load static %}
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>
-            {% block title %}                
-            {% endblock %}
-        </title>
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        {# Global stylesheets #}
-        
-        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-
-        <link rel="stylesheet" href="{% static 'css/all.css' %}">
-        
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
-        
-        {% block extra_css %}
+<head>
+    <meta charset="utf-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block extra_css %}
             {# Override this in templates to add extra stylesheets #}
         {% endblock %}
-    </head>
+    <title>{% block title %}                
+            {% endblock %}</title>
+</head>
 
-    <body class="wrapper">
+<body>
 
-        <!-- Sidebar -->
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3>{{ profile.name }}</h3>
-            </div>
-
-            <ul class="list-unstyled main">
-                <li>
-                    <a href="{% url 'index' %}">Home</a>
-                </li>
-                <li>
-                    <a href="{% url 'list_patient' %}">Pacientes</a>
-                </li>
-                <li>
-                    <a href="#">Exames</a>
-                </li>
-                <li>
-                    <a href="{% url 'new_exam' %}">Realizar Exame</a>
-                </li>
-                <li>
-                    <a href="#">Resultados</a>
-                </li>
-                <li>
-                    <a href="#">Análises</a>
-                </li>
+    <div class="top-menu">
+        <h1 class="user-name">Olá,{{ profile.name }}</h1>
+        <h2 class="date"></h2>
+        
+    </div>
+    <div class="side-menu">
+        <h3 class="gestor">{{ profile.name }}</h3>
+        <h4 class="role">Médico Pesquisador</h4>
+        <div class="border"></div>
+        <div class="item-menu">
+            <ul class="menu-font home"><span class="ihome"><a href="{% url 'index' %}"><img src="{% static 'icons/home_24px.png' %}"></span>Home</a>
+            </ul>
+            <ul class="menu-font pacientes"><span class="ipacientes"><a href="{% url 'list_patient' %}"><img src="{% static 'icons/person_outline_24px.png' %}"></span>Pacientes</a>
+            </ul>
+            <ul class="menu-font exames"><span class="iexames"><a href="#"><img src="{% static 'icons/file_copy_24px.png' %}"></span>Exames</a>
+            </ul>
+            <ul class="menu-font r-exames"><span class="iexames"><a href="{% url 'new_exam' %}"><img src="{% static 'icons/add_circle_outline_24px.png' %}"></span>Realizar Exame</a>
+            </ul>
+            <ul class="menu-font resultados"><span class="iresultados"><a href="{% url 'results' %}"><img src="{% static 'icons/check_circle_outline_24px.png' %}"></span>Resultados</a>
+            </ul>
+            <ul class="menu-font analises"><span class="ianalises"><a href="#"><img src="{% static 'icons/assessment_24px.png' %}"></span>Análises</a>
             </ul>
 
-            <ul class="list-unstyled">
-                <li>
-                    <a href="{% url 'configuration' %}">Configurações</a>
-                </li>
-                <li>
-                    <a href="{% url 'logout' %}">Sair</a>
-                </li>
+            <ul class="menu-font conf"><span class="iresultados"><a href="{% url 'configuration' %}"><img src="{% static 'icons/settings_24px.png' %}"></span>Configurações</a>
             </ul>
-        </nav>
-
-        <div id="content">
+            <ul class="menu-font sair"><span class="ianalises"><a href="{% url 'logout' %}"><img src="{% static 'icons/Fill.png' %}"></span>Sair</a>
+            </ul>
+        </div>
+    </div>
+     <div id="content">
 
             {% if messages %}
                 <ul class="messages text-white">
@@ -77,9 +60,10 @@
             {% endif %}
             
 
-            <div>
-                {% block content %}{% endblock %}
-            </div>
+           <section>
+     {% block content %}{% endblock %}
+
+    </section>
         </div>
 
         {# Global javascript #}
@@ -93,5 +77,5 @@
         {% block extra_js %}
             {# Override this in templates to add extra javascript #}
         {% endblock %}
-    </body>
-</html>
+</body>
+</html>  

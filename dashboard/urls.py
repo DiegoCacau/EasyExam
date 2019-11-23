@@ -11,4 +11,5 @@ urlpatterns = [
     re_path(r'^paciente/ver/(?P<pk>[0-9]+)$', PatientView.as_view(), name='patient'),
     re_path(r'^exame/cadastro$', NewExamView.as_view(), name='new_exam'),
     re_path(r'^exame/cadastro/(?P<pk>[0-9]+)$', NewExamUserView.as_view(), name='new_exam_pk'),
+    re_path(r'^resultado/$', ResultsView.as_view(), name='results'),
 ]

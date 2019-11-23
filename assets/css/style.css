@@ -128,7 +128,7 @@ color: #000000;
 }
 
 .home{
-	position: absolute;
+position: absolute;
 left: 0%;
 right: 0%;
 top: 283px;
@@ -678,6 +678,213 @@ letter-spacing: 0.01em;
 
 }
 
+.tad3 {
+	position: relative;
+	left: 345px;
+	top: 40px;
+	width: 150px;
+	
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 15px;
+	/* identical to box height */
+	
+	letter-spacing: 0.01em;
+	
+	
+	
+	}
+	
+	.tid3{
+	position: relative;
+	width: 400px;
+	left: 410px;
+	top: 40px;
+	
+	
+	
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 15px;
+	/* identical to box height */
+	
+	letter-spacing: 0.01em;
+	
+	/* dark_blue */
+	
+	
+	}
+	
+	.tatd3{
+	position: relative;
+	left: 280px;
+	top: 40px;
+	width: 400px;
+	
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 15px;
+	/* identical to box height */
+	
+	letter-spacing: 0.01em;
+	
+	/* dark_blue */
+	
+	
+	}
+	
+	.tcd3{
+	position: relative;
+	left: 150px;
+	top: 40px;
+	width: 400px;
+	
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 15px;
+	/* identical to box height */
+	
+	letter-spacing: 0.01em;
+	
+	/* dark_blue */
+	
+	
+	}
+	
+	.tacd3 {
+	position: relative;
+	left: 80px;
+	top: 40px;
+	width: 400px;
+	
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 15px;
+	/* identical to box height */
+	
+	letter-spacing: 0.01em;
+	
+	/* dark_blue */
+	
+	
+	}
+	
+	.tazd3 {
+	position: relative;
+	left: -182px;
+	top: 40px;
+	width: 400px;
+	
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 15px;
+	/* identical to box height */
+	
+	text-align: right;
+	letter-spacing: 0.01em;
+	
+	/* dark_blue */
+	
+	
+	}
+	
+	.iexportar{
+	position: absolute;
+	left: 40.96%;
+	right: 40.96%;
+	top: 320px;
+	bottom: 43.04%;
+	}
+	
+	.iprint{
+	position: absolute;
+	left: 33.33%;
+	right: 33.33%;
+	top: 320px;
+	bottom: 66.67%;
+	}
+	
+	.exp{
+	position: absolute;
+	left: 7%;
+	right: 0%;
+	top: 0%;
+	bottom: 20%;
+	
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 13px;
+	line-height: 15px;
+	/* identical to box height */
+	
+	letter-spacing: 0.01em;
+	
+	color: #979797;
+	}
+	
+	.print {
+	
+	position: absolute;
+	left: 5%;
+	right: 0%;
+	top: 0%;
+	bottom: 20%;
+	
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 13px;
+	line-height: 15px;
+	/* identical to box height */
+	
+	letter-spacing: 0.01em;
+	
+	color: #979797;
+	
+	}
+	
+	.check{
+		left: 23.12%;
+	right: 21.88%;
+	top: 30%;
+	bottom: 28.13%;
+	
+	/* white */
+	
+	background: #FFFFFF;
+	/* white */
+	}
+	
+	input:checked{
+		background-color: #7F22FD;
+		border-radius: 4px;
+	}
+	
+	.inp{
+	left: 0%;
+	right: 0%;
+	top: 0%;
+	bottom: 0%;
+	
+	background-color: #7F22FD;
+	border-radius: 4px;
+	}
+	
+
+
 .text-grey{
 	color: #334D6E;
 }
@@ -690,7 +897,7 @@ letter-spacing: 0.01em;
 position: relative;
 left: 0px;
 top: 300px;
-
+z-index: -10000;
 /* white */
 
 
@@ -758,6 +965,29 @@ border-radius: 200px;
 	position: relative;
 height: 16px;
 left: 32px;
+right: 0px;
+top: calc(50% - 16px/2 - 0.4px);
+
+/* Button / Roboto Medium */
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 11px;
+line-height: 16px;
+/* identical to box height, or 145% */
+
+text-align: center;
+letter-spacing: 0.75px;
+text-transform: uppercase;
+
+color: #FFFFFF;
+}
+
+.btn-text2{
+	position: relative;
+height: 16px;
+left: 12px;
 right: 0px;
 top: calc(50% - 16px/2 - 0.4px);
 
@@ -973,6 +1203,15 @@ width: 169px;
 height: 54px;
 left: 340px;
 top: 827px;
+}
+
+.btn_salvar{
+position: absolute;
+width: 169px;
+height: 54px;
+left: 340px;
+top: 900px
+}
 
 /* Subtitle 1 / Roboto Regular */
 

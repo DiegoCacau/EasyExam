@@ -109,7 +109,7 @@ class NewPatientView(View):
 
         profile = Profile.objects.get(user=request.user)
             
-        return render(request, 'new_patient.html',
+        return render(request, 'novo_paciente.html',
                       {"profile": profile})
 
 
@@ -149,7 +149,7 @@ class NewPatientView(View):
             except Exception as e:
                 messages.error(request, str(e))
 
-        return render(request, 'new_patient.html',
+        return render(request, 'novo_paciente.html',
                       {"profile": profile})
 
 
@@ -167,7 +167,7 @@ class ListPatientView(View):
         page = request.GET.get('page')
         patients = paginator.get_page(page)
             
-        return render(request, 'list_patient.html',
+        return render(request, 'lista_pacientes.html',
                       {"patients": patients,
                        "profile": profile})
 
@@ -238,3 +238,18 @@ class NewExamUserView(View):
         return render(request, 'new_exam.html',
                       {"profile": profile,
                        "motivations": motivations})
+
+class ResultsView(View):
+
+    def get(self, request, pk=None):
+        if(not request.user.is_authenticated):
+            return HttpResponseRedirect(reverse("login"))
+
+        profile = Profile.objects.get(user=request.user)
+        #motivations = Motivation.objects.all()
+
+        
+            
+        return render(request, 'resultados.html',
+                      {"profile": profile,
+                       })                       

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    EasyExam - Novo Paciente
+{% endblock %}
+
+{% block extra_css %}
+
+{% endblock %}
+
+
+
+
+{% block content %}
+    <h1 class="att">Pacientes</h1>
+        <form action="" method="">
+        <input class="search" type="search" name="search" placeholder="Pesquisar">
+        </form>
+        <a class="btn-novo" href="{% url 'new_patient' %}"><span class="btn-text">Novo</span></a>
+        <table class="tab">
+            <tr class="table-topo">
+                <th class="ta text-grey">Nome</th>
+                <th class="ti text-grey">Email</th>
+                <th class="tat text-grey">Data Nascimento</th>
+                <th class="tc text-grey">Peso</th>
+                <th class="tac text-grey">Altura</th>
+                <th class="taz text-grey">Histórico</th>
+            </tr>
+            <div class="border2"></div>
+           
+               {% for patient in patients %}
+                <tr class="tr1">
+                    <td class="tad2 padding text-black">{{ patient.name }}</td>
+                    <td class="tid2 padding text-black">{{ patient.email }}</td>
+                    <td class="tatd2 padding text-black">{{ patient.birthday }}</td>
+                    <td class="tcd2 padding text-black">{{ patient.weight }}</td>
+                    <td class="tacd2 padding text-black">{{ patient.height }}</span>
+                    <td class="tazd2 padding"><a href="{% url 'patient' pk=patient.pk %}"><button class="btn btn-primary">Ver</button></a></td>
+                </tr>
+            {% endfor %}
+            
+             
+          
+           
+        </table>
+
+
+    
+        
+       
+{% endblock %}
+
+
+{% block extra_js %}
+
+{% endblock %}
+
+
+
+
+
+
+
+

@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            {% block title %}                
+            {% endblock %}
+        </title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {# Global stylesheets #}
+        
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+        <link rel="stylesheet" href="{% static 'css/all.css' %}">
+        
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        
+        {% block extra_css %}
+            {# Override this in templates to add extra stylesheets #}
+        {% endblock %}
+    </head>
+
+    <body class="wrapper">
+        
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>{{ profile.name }}</h3>
+            </div>
+
+            <ul class="list-unstyled main">
+                <li>
+                    <a href="{% url 'index' %}">Home</a>
+                </li>
+                <li>
+                    <a href="{% url 'list_patient' %}">Pacientes</a>
+                </li>
+                <li>
+                    <a href="#">Exames</a>
+                </li>
+                <li>
+                    <a href="{% url 'new_exam' %}">Realizar Exame</a>
+                </li>
+                <li>
+                    <a href="#">Resultados</a>
+                </li>
+                <li>
+                    <a href="#">Análises</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled">
+                <li>
+                    <a href="{% url 'configuration' %}">Configurações</a>
+                </li>
+                <li>
+                    <a href="{% url 'logout' %}">Sair</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="content">
+
+            {% if messages %}
+                <ul class="messages text-white">
+                    {% for message in messages %}
+                        {% if message.tags == "error" %}
+                            <li{% if message.tags %} class="{{ message.tags }} bg-danger"{% endif %}>{{ message }}</li>
+                        {% else %}
+                            <li{% if message.tags %} class="{{ message.tags }} bg-success"{% endif %}>{{ message }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            
+
+            <div>
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+
+        {# Global javascript #}
+
+        <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+
+        <script src="{% static 'js/popper.min.js' %}"></script>
+
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+        {% block extra_js %}
+            {# Override this in templates to add extra javascript #}
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    EasyExam - Novo Paciente
+{% endblock %}
+
+{% block extra_css %}
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+    
+        
+        <h1 class="att">Novo Paciente</h1>
+
+        {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        {% if message.tags == "error" %}
+                            <li{% if message.tags %} class="{{ message.tags }} bg-danger"{% endif %}>{{ message }}</li>
+                        {% else %}
+                            <li{% if message.tags %} class="{{ message.tags }} bg-success"{% endif %}>{{ message }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        <form id="new-term-form" class="single-form" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <span class="lnome">Nome</span>
+            <input type="text" class="nome" name="user_name">
+
+            <span class="lcpf">CPF</span>
+            <input type="text" class="cpf" name="user_cpf">
+
+            <span class="lemail">Email</span>
+            <input type="text" class="email" name="user_email">
+            
+            <span class="ldata_n">Data de Nascimento</span>
+            <input type="text" class="data_n" name="user_birthday">
+
+            <span class="lpeso">Peso</span>
+            <input type="text" class="peso" name="user_weight">
+
+            <span class="laltura">Altura</span>
+            <input type="text" class="altura" name="user_height">
+
+            <span class="lsexo">Sexo</span>
+            <select type="text" class="sexo" name="user_sex">
+                <option selected>Feminino</option>
+                <option>Masculino</option>
+            </select>
+
+            <button id="emit-term-btn" align="right" name="emit-term" type="submit" class="btn_salvar btn-primary">Salvar</button>
+            
+        </form>
+            
+            
+{% endblock %}
+
+
+{% block extra_js %}
+
+{% endblock %}
+
+
+
+
