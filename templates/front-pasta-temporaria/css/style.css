@@ -299,9 +299,9 @@ color: #000000;
 }
 
 .table-topo{
-position: absolute;
+position: relative;
 height: 48px;
-left: 345px;
+left: 0px;
 top: 0px;
 
 /* white */
@@ -312,9 +312,8 @@ border-radius: 4px;
 
 .ta {
 position: relative;
-left: 0px;
-top: 0%;
-
+right: 1.5%;
+width: 120px;
 
 font-family: Roboto;
 font-style: normal;
@@ -332,9 +331,8 @@ opacity: 0.5;
 
 .ti{
 position: relative;
-left: 50px;
-right: 0%;
-top: 0%;
+width: 400px;
+right: 7%;
 
 
 font-family: Roboto;
@@ -353,9 +351,8 @@ opacity: 0.5;
 
 .tat{
 position: relative;
-left: 100px;
-top: 0%;
-
+right: 5%;
+width: 400px;
 
 font-family: Roboto;
 font-style: normal;
@@ -373,8 +370,8 @@ opacity: 0.5;
 
 .tc{
 position: relative;
-left: 150px;
-top: 0%;
+right: 13.5%;
+width: 400px;
 
 
 font-family: Roboto;
@@ -393,8 +390,8 @@ opacity: 0.5;
 
 .tac {
 position: relative;
-left: 200px;
-top: 0%;
+right: 15%;
+width: 400px;
 
 
 font-family: Roboto;
@@ -413,9 +410,9 @@ opacity: 0.5;
 
 .taz {
 position: relative;
-left: 250px;
-right: 0%;
-top: 0%;
+position: relative;
+right: 20%;
+width: 400px;
 
 
 font-family: Roboto;
@@ -437,8 +434,7 @@ opacity: 0.5;
 
 .tad {
 position: relative;
-left: 345px;
-top: 40px;
+left: 0%;
 width: 120px;
 
 font-family: Roboto;
@@ -457,8 +453,7 @@ letter-spacing: 0.01em;
 .tid{
 position: relative;
 width: 400px;
-left: 500px;
-top: 40px;
+left: 0%;
 
 
 
@@ -478,8 +473,7 @@ letter-spacing: 0.01em;
 
 .tatd{
 position: relative;
-left: 480px;
-top: 40px;
+left: 0%;
 width: 400px;
 
 font-family: Roboto;
@@ -498,8 +492,7 @@ letter-spacing: 0.01em;
 
 .tcd{
 position: relative;
-left: 370px;
-top: 40px;
+right: 7%;
 width: 400px;
 
 font-family: Roboto;
@@ -518,8 +511,7 @@ letter-spacing: 0.01em;
 
 .tacd {
 position: relative;
-left: 200px;
-top: 40px;
+right: 8.5%;
 width: 400px;
 
 font-family: Roboto;
@@ -538,8 +530,7 @@ letter-spacing: 0.01em;
 
 .tazd {
 position: relative;
-left: -165px;
-top: 40px;
+right: 22%;
 width: 400px;
 
 font-family: Roboto;
@@ -895,7 +886,8 @@ border-radius: 4px;
 
 .tab{	
 position: relative;
-left: 0px;
+left: 340px;
+width:  50%;
 top: 300px;
 z-index: -10000;
 
@@ -907,7 +899,7 @@ z-index: -10000;
 .tr1{
 position: relative;
 width: 400px;
-left: 445px;
+left: 0px;
 top: 100px;
 
 /* white */
@@ -919,7 +911,7 @@ top: 100px;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 	position: absolute;
 	left: 345px;
-	width: 650px;
+	width: 50%;
 	top: 350px;
 }
 
