@@ -1,5 +1,6 @@
 # Environment and secret settings
 .env
+tests/.env
 
 # Settings symbolic link
 settings.py
