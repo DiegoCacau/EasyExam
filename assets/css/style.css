@@ -277,6 +277,10 @@ border-radius: 100px;
 
 }
 
+.space{
+	position: relative;
+	top:40px;
+}
 
 .att {
 	position: absolute;
@@ -438,7 +442,8 @@ opacity: 0.5;
 position: relative;
 left: 345px;
 top: 40px;
-width: 120px;
+width: 150px;
+
 
 font-family: Roboto;
 font-style: normal;
@@ -477,8 +482,7 @@ letter-spacing: 0.01em;
 
 .tatd{
 position: relative;
-left: 480px;
-top: 40px;
+left: 3%;
 width: 400px;
 
 font-family: Roboto;
@@ -558,9 +562,8 @@ letter-spacing: 0.01em;
 
 .tad2 {
 position: relative;
-left: 345px;
-top: 40px;
-width: 120px;
+left: 1.5%;
+width: 150px;
 
 font-family: Roboto;
 font-style: normal;
@@ -578,8 +581,7 @@ letter-spacing: 0.01em;
 .tid2{
 position: relative;
 width: 400px;
-left: 496px;
-top: 40px;
+left: 6%;
 
 
 
@@ -599,8 +601,7 @@ letter-spacing: 0.01em;
 
 .tatd2{
 position: relative;
-left: 467px;
-top: 40px;
+left: 2%;
 width: 400px;
 
 font-family: Roboto;
@@ -619,8 +620,7 @@ letter-spacing: 0.01em;
 
 .tcd2{
 position: relative;
-left: 340px;
-top: 40px;
+right: -1.7%;
 width: 400px;
 
 font-family: Roboto;
@@ -659,8 +659,7 @@ letter-spacing: 0.01em;
 
 .tazd2 {
 position: relative;
-left: -202px;
-top: 40px;
+right: 11%;
 width: 400px;
 
 font-family: Roboto;
@@ -680,9 +679,8 @@ letter-spacing: 0.01em;
 
 .tad3 {
 	position: relative;
-	left: 345px;
-	top: 40px;
-	width: 150px;
+	left: 0%;
+	width: 490px;
 	
 	font-family: Roboto;
 	font-style: normal;
@@ -700,8 +698,7 @@ letter-spacing: 0.01em;
 	.tid3{
 	position: relative;
 	width: 400px;
-	left: 410px;
-	top: 40px;
+	left: 8%;
 	
 	
 	
@@ -721,8 +718,7 @@ letter-spacing: 0.01em;
 	
 	.tatd3{
 	position: relative;
-	left: 280px;
-	top: 40px;
+	right: -2%;
 	width: 400px;
 	
 	font-family: Roboto;
@@ -761,8 +757,7 @@ letter-spacing: 0.01em;
 	
 	.tacd3 {
 	position: relative;
-	left: 80px;
-	top: 40px;
+	right: -4%;
 	width: 400px;
 	
 	font-family: Roboto;
@@ -781,9 +776,8 @@ letter-spacing: 0.01em;
 	
 	.tazd3 {
 	position: relative;
-	left: -182px;
-	top: 40px;
-	width: 400px;
+	right: 0%;
+	width: 950px;
 	
 	font-family: Roboto;
 	font-style: normal;
@@ -801,48 +795,47 @@ letter-spacing: 0.01em;
 	}
 	
 	.iexportar{
-	position: absolute;
-	left: 40.96%;
-	right: 40.96%;
-	top: 320px;
-	bottom: 43.04%;
+		position: relative;
+		left: 45%;
+		top: 235px;
+		width: 100%;
+		margin: 0;
 	}
 	
 	.iprint{
-	position: absolute;
-	left: 33.33%;
-	right: 33.33%;
-	top: 320px;
-	bottom: 66.67%;
+		position: relative;
+		left: 35%;
+		top: 270px;
+		width: 100%;
+		margin: 0;
 	}
 	
 	.exp{
-	position: absolute;
-	left: 7%;
-	right: 0%;
-	top: 0%;
-	bottom: 20%;
+		position: relative;
+		left: 2%;
+		bottom: 20px;
+		width: 100%;
+		margin-left: 0;
 	
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 13px;
-	line-height: 15px;
-	/* identical to box height */
-	
-	letter-spacing: 0.01em;
-	
-	color: #979797;
+		font-family: Roboto;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 13px;
+		line-height: 15px;
+		/* identical to box height */
+		
+		letter-spacing: 0.01em;
+		
+		color: #979797;
 	}
 	
 	.print {
 	
-	position: absolute;
-	left: 5%;
-	right: 0%;
-	top: 0%;
-	bottom: 20%;
-	
+		position: relative;
+		left: 2%;
+		bottom: 20px;
+		width: 100%;	
+		margin: 0;
 	font-family: Roboto;
 	font-style: normal;
 	font-weight: bold;
@@ -933,11 +926,11 @@ top: 100px;
 
 .search{
 
-position: absolute;
-width: 650px;
+	position: relative;
+	width: 40%;
 height: 40px;
-left: 341px;
-top: 247px;
+left: 331px;
+top: 237px;
 border: none;
 
 background: #F9F9F9;
@@ -949,11 +942,11 @@ background: #F9F9F9;
 }
 
 .btn-novo{
-	position: absolute;
-	width: 100px;
+	position: relative;
+width: 100px;
 height: 40px;
-right:210px;
-top: 247px;
+left:70%;
+top: 195px;
 
 /* Secondary — 500* */
 
@@ -964,7 +957,7 @@ border-radius: 200px;
 .btn-text{
 	position: relative;
 height: 16px;
-left: 32px;
+left: 0px;
 right: 0px;
 top: calc(50% - 16px/2 - 0.4px);
 
