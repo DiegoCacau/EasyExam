@@ -52,7 +52,10 @@ Go to http://127.0.0.1:8000/admin, access with your credentials, go to Profiles 
 * To run tests:
 
 	```
-	$ python manage.py  test --verbosity=2 -k
+	$ python manage.py  shell
+	$ from tests.web import *
+	$ init()
 	```
+
 
 
