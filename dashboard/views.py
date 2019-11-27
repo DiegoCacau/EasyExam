@@ -12,6 +12,8 @@ import datetime
 from .models import *
 
 
+def auth_user(username, password):
+    return authenticate(username=username, password=password)
 
 class LoginView(View):
 
@@ -27,7 +29,7 @@ class LoginView(View):
             username = request.POST['username']
             password = request.POST['password']
 
-            user = authenticate(username=username, password=password)
+            user = auth_user(username, password)
 
             if user is not None:
                 if user.is_active:

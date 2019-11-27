@@ -4,6 +4,8 @@ from selenium.common.exceptions import NoSuchElementException
 from time import  sleep
 from decouple import config
 from dashboard.models import Patient
+from dashboard.views import auth_user
+from django.contrib.auth.models import User
 
 
 def login(driver):
@@ -74,10 +76,25 @@ def addPatient(driver, name, cpf, email, birthday, weight, height, gender):
     return True
 
 
+def login_unit():
+    User.objects.create_user(username="aaaaa",
+                first_name="aaaaa",
+                last_name="aaaaa",
+                password="111111",
+                email="aaaaa@aaaaa.com")
+
+    user = auth_user("aaaaa", "111111")
+
+    if user is not None:
+        user.delete()
+    else:
+        return False 
+
+    return True
+
 
 def init():
-    # here you must insert the path to the Selenium chromedriver
-    driver = webdriver.Chrome(config('WEB_DRIVER'))  # Optional argument, if not specified will search path.
+    driver = webdriver.Chrome(config('WEB_DRIVER')) 
 
     try:
         print("Caso de teste 1 - Login...", end=' ')
@@ -106,3 +123,11 @@ def init():
 
     finally:
         driver.close()
+
+
+
+    print("Caso de teste 3 - Teste Unitário de Login...", end=' ')
+    if(login_unit()):
+        print("Sucesso!")
+    else:
+        print("Falhou!")
